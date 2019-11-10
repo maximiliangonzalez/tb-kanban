@@ -3,7 +3,9 @@ import React from 'react';
 const Card = ({text}) => {
   return (
     <div>
-      {text}
+      <button>{'<'}</button>
+        {text}
+      <button>{'>'}</button>
     </div>
   );
 };

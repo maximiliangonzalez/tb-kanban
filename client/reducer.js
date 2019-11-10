@@ -22,11 +22,16 @@ export const initialState = [
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case 'addCard':
+    case 'addCard': {
       const newState = [...state];
-      newState[action.index] = [...state[action.index], <Card text={action.text} index={state[action.index].length}/>];
+      newState[action.index] = [
+        ...state[action.index], 
+        <Card text={action.text} index={state[action.index].length}/>
+      ];
       return newState;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 };
