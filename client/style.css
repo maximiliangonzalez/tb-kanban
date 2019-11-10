@@ -1,3 +1,13 @@
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .purple {
   background: #8E6E95;
 }
