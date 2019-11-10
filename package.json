@@ -1,0 +1,42 @@
+{
+  "name": "t-shaped",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/server.js",
+    "build": "webpack",
+    "dev": "concurrently \"webpack-dev-server --open\" \"nodemon server/server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximiliangonzalez/t-shaped.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximiliangonzalez/t-shaped/issues"
+  },
+  "homepage": "https://github.com/maximiliangonzalez/t-shaped#readme",
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.0",
+    "g": "^2.0.1",
+    "nodemon": "^1.19.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.8.2"
+  }
+}
