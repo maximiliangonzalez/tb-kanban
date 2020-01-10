@@ -1,27 +1,32 @@
-import React, { useReducer } from 'react';
+import React, { useState } from 'react';
 import Column from './Column.jsx';
-import { reducer, initialState } from './reducer.js';
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [columns, setColumns] = useState([{headline: 'col1', storage: []}, {headline: 'col2', storage: []}, {headline: 'col3', storage: []}, {headline: 'col4', storage: []}]);
 
-  const addCard = index => {
-    const text = window.prompt(`enter text for new card in column ${index + 1}`);
-    dispatch({type: 'addCard', index, text});
-  };
-
-  const columns = [
-    <Column index={0} cards={state[0]} dispatch={dispatch} addCard={addCard}/>,
-    <Column index={1} cards={state[1]} dispatch={dispatch} addCard={addCard}/>,
-    <Column index={2} cards={state[2]} dispatch={dispatch} addCard={addCard}/>,
-    <Column index={3} cards={state[3]} dispatch={dispatch} addCard={addCard}/>
-  ];
+  const addCard = (text, columnNumber) => {
+    setColumns(state => {
+      const newState = [...state];
+      const newColumn = {...newState[columnNumber]};
+      newColumn.storage = [...newColumn.storage, text];
+      newState[columnNumber] = newColumn;
+      return newState;
+    });
+  }
 
   return (
     <div className="row">
-      {columns}
-    </div>
-  );
+      {columns.map(({headline, storage}, index) => (
+        <Column 
+          headline={headline} 
+          key={headline} 
+          storage={storage} 
+          columnNumber={index}
+          addCard={addCard}
+        />
+      ))}
+    </ div>
+  )
 };
 
 export default App;

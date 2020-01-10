@@ -1,13 +1,7 @@
 import React from 'react';
 
 const Card = ({text}) => {
-  return (
-    <div>
-      <button>{'<'}</button>
-        {text}
-      <button>{'>'}</button>
-    </div>
-  );
+  return <h4>{text}</h4>
 };
 
 export default Card;
